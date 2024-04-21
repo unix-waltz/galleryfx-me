@@ -19,39 +19,6 @@
             </div>
         </div>
     </section>
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                @foreach ($albums as $album)
-                <div class="col-md-4">
-                    <div class="card card-primary shadow">
-                        <div class="card-body">
-                            <img src="/storage/album_covers/{{$album->cover_image}}" style="height: 200px; width: 100%; object-fit: cover;" class="card-img-top" alt="Album Image">
-                            <h5 class="card-title">{{$album->name}}</h5>
-                            <p class="card-text">{{$album->description}}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <a href="{{route('albums.show' , $album->id)}}" class="btn btn-primary">Lihat</a>
-                                <form method="POST" action="{{ route('albums.destroy', $album->id) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        <div class="d-flex justify-content-between mt-4">
-            <p>Showing {{ $albums->firstItem() }} - {{ $albums->lastItem() }} of {{ $albums->total() }} results</p>
-            {{ $albums->links('pagination::bootstrap-4') }}
-        </div>
-    </section>
-    <!-- /.content -->
-
-    <!-- Buat Album Baru -->
     <section class="content">
         <div class="container-fluid">
             <div class="row justify-content-end">
@@ -65,6 +32,44 @@
             </div>
         </div>
     </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                @foreach ($albums as $album)
+                <a href="{{route('albums.show' , $album->id)}}" class="col-md-4 text-dark">
+                    <div class="card card-primary shadow">
+                        <div class="card-body p-0">
+                            <img src="/storage/album_covers/{{$album->cover_image}}" style="height: 300px; width: 100%; object-fit: cover;" class="card-img-top" alt="Album Image">
+                            <div class="card-body">
+                            <h5 class="card-title">{{$album->name}}</h5>
+                            <p class="card-text">{{$album->description}}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                              
+                                <form method="POST" action="{{ route('albums.destroy', $album->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                </form>
+
+                            </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+            <p>Showing {{ $albums->firstItem() }} - {{ $albums->lastItem() }} of {{ $albums->total() }} results</p>
+            {{ $albums->links('pagination::bootstrap-4') }}
+        </div>
+    </section>
+    <!-- /.content -->
+
+    <!-- Buat Album Baru -->
+   
     <!-- /.content -->
 </div>
 

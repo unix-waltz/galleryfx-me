@@ -69,6 +69,7 @@
     <!-- ./wrapper -->
          @include('layouts.include.footer')
     <!-- jQuery -->
+    
     <script src="{{asset('AdminLTE-3.2.0/plugins/jquery/jquery.min.js')}}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="{{asset('AdminLTE-3.2.0/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
@@ -103,6 +104,16 @@
     <script src="{{asset('AdminLTE-3.2.0/dist/js/demo.js')}}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{asset('AdminLTE-3.2.0/dist/js/pages/dashboard.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            // Menangkap setiap klik pada item menu
+            $('.nav-item a').on('click', function () {
+                // Menutup sidebar saat item menu diklik
+                $('body').removeClass('sidebar-mini');
+            });
+        });
+    </script>
+    
 </body>
 
 </html>

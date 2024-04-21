@@ -25,7 +25,7 @@ use App\Http\Controllers\LikedPhotoController;
 
 Route::get('/', function () {
     return view('auth.login');
-});
+})->middleware('guest');
 
 
 // Path: routes\web.php
@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Rute login dan logout
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
