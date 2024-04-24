@@ -24,7 +24,7 @@
             <div class="row justify-content-end">
                 <div class="col-md-6">
                     <div class="d-grid gap-2">
-                        <a class="btn btn-success float-right" href="/albums/create">
+                        <a class="btn btn-dark float-right" href="/albums/create">
                             <i class="fas fa-plus mr-1"></i> Buat Album Baru
                         </a>
                     </div>
@@ -49,7 +49,7 @@
                                 <form method="POST" action="{{ route('albums.destroy', $album->id) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                    <button type="submit" class="btn btn-sm btn-dark">Hapus</button>
                                 </form>
 
                             </div>

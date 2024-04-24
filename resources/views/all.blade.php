@@ -19,7 +19,7 @@
                         <form method="POST" action="{{ route('albums.destroy', $album->id) }}">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Hapus</button>
+                            <button type="submit" class="btn btn-dark btn-sm">Hapus</button>
                         </form>
 
                     </div>

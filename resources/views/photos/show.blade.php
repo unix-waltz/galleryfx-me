@@ -8,7 +8,7 @@
     <form action="{{route('photos.destroy' , $photo->id)}}" method="post" class="d-inline">
         @csrf
         @method('delete')
-        <button type="submit" class="btn btn-danger my-2">Delete</button>
+        <button type="submit" class="btn btn-dark my-2">Delete</button>
     </form>
     <div>
         <img src="/storage/albums/{{$photo->album->id}}/{{$photo->photo}}" alt="Photo" class="img-fluid mt-3" style="max-height: 500px;">

@@ -33,7 +33,7 @@
                                     <label for="cover_image" class="form-label">Cover Image</label>
                                     <input type="file" class="form-control" id="cover_image" name="cover_image">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-dark">Submit</button>
                             </form>
                 </div>
             </div>

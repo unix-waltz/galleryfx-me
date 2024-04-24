@@ -37,7 +37,7 @@
                                   <input type="file" class="form-control" id="photo" name="photo">
                                 </div>
                                 <input type="hidden" name="album_id" value="{{$album_id}}">
-                              <button type="submit" class="btn btn-primary">Submit</button>
+                              <button type="submit" class="btn btn-dark">Submit</button>
                           </form>
               </div>
           </div>
