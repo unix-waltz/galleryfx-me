@@ -58,5 +58,5 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Rute register
-Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
+Route::get('/register', [AuthController::class, 'register'])->middleware('guest')->name('auth.register');
 Route::post('/register', [AuthController::class, 'store'])->name('auth.store');

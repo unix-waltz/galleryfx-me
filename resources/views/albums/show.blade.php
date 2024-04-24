@@ -3,16 +3,20 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Section Header -->
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5 shad">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">{{$album->name}}</h1>
-                <p class="lead text-muted">{{$album->description}}</p>
-                <p>
+<div class="container">
+    <br><br>
+    <h1 class="fw-light">{{$album->name}}</h1>
+    <p class="lead text-muted">{{$album->description}}</p> <p>
                     <a href="/photo/upload/{{$album->id}}" class="btn btn-primary my-2">Upload Photo</a>
                     <a href="/albums" class="btn btn-secondary my-2">Back</a>
                 </p>
+</div>
+    <section class="py-5 text-center container">
+        
+        <div class="row py-lg-5 shad">
+            <div class="col-lg-6 col-md-8 mx-auto">
+     
+               
             </div>
         </div>
     </section>
